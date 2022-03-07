@@ -74,8 +74,8 @@ UserSchema.methods.getJWTToken = function () {
 
 // Compare Password
 
-UserSchema.methods.comparePassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
+UserSchema.methods.comparePassword = async function (enteredPpassword) {
+  return await bcrypt.compare(enteredPpassword, this.password);
 };
 
 // Generating Password Reset Token

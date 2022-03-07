@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const sendToken = require("../utils/jwtToken");
+const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 
 // User Registration
 exports.userRegister = async (req, res, next) => {
@@ -48,6 +49,20 @@ exports.userLogin = async (req, res, next) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+// Logout User
+exports.userLogout = catchAsyncErrors(async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged Out",
+  });
+});
+
 exports.fileuplad = async (req, res, next) => {
   try {
     const file = req.file;
