@@ -1,19 +1,25 @@
 const User = require("../models/User");
 const sendToken = require("../utils/jwtToken");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
+const Appartment = require("../models/Appartment");
 
 // User Registration
 exports.userRegister = async (req, res, next) => {
   try {
-    const { name, email, password, mobile } = req.body;
+    const { name, email, password, mobile, appartmentname } = req.body;
+    console.log(req.body);
+    const appartment = await Appartment.findOne({ appartmentname });
+    console.log(appartment);
+
     const user = await User.create({
       name,
       email,
       mobile,
       password,
+      appartmentId: appartment.id,
     });
 
-    sendToken(user, 200, res);
+    sendToken(user, 201, res);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
