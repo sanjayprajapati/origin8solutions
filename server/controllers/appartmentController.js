@@ -12,6 +12,7 @@ exports.createAppartment = async (req, res, next) => {
       numOfrooms,
       rooms,
     });
+    console.log(appartment);
 
     res.status(201).json({ succss: true, appartment });
   } catch (error) {

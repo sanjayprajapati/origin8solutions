@@ -4,6 +4,7 @@ const validator = require("validator");
 const AppartmentSchema = new mongoose.Schema({
   appartmentname: {
     type: String,
+    unique: true,
     required: [true, "Pleae enter appartment name"],
   },
   numOfrooms: {
