@@ -42,14 +42,9 @@ const UserSchema = new mongoose.Schema({
     //required: [true, "Please Select your appartment type"],
   },
   avatar: {
-    public_id: {
-      type: String,
-      required: true,
-    },
-    url: {
-      type: String,
-      require: true,
-    },
+    type: String,
+    default:
+      "http://localhost:8282/uploads/2022-03-06T10-17-59.273Z-unnamed.jpg",
   },
   createdAt: {
     type: Date,
