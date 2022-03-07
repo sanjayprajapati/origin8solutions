@@ -34,8 +34,9 @@ const UserSchema = new mongoose.Schema({
     default: "user",
   },
   cityId: {
-    type: String,
-    //required: [true, "Please Select your City"],
+    type: mongoose.Schema.ObjectId,
+    ref: "Cities",
+    required: [true, "Please Select your City"],
   },
   appartmentId: {
     type: mongoose.Schema.ObjectId,

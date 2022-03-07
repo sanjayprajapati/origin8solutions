@@ -2,14 +2,16 @@ const User = require("../models/User");
 const sendToken = require("../utils/jwtToken");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const Appartment = require("../models/Appartment");
+const Cities = require("../models/Cities");
 
 // User Registration
 exports.userRegister = async (req, res, next) => {
   try {
-    const { name, email, password, mobile, appartmentname } = req.body;
+    const { name, email, password, mobile, appartmentname, city_name } =
+      req.body;
     console.log(req.body);
     const appartment = await Appartment.findOne({ appartmentname });
-    console.log(appartment);
+    const cities = await Cities.findOne({ city_name });
 
     const user = await User.create({
       name,
@@ -17,6 +19,7 @@ exports.userRegister = async (req, res, next) => {
       mobile,
       password,
       appartmentId: appartment.id,
+      cityId: cities.id,
     });
 
     sendToken(user, 201, res);
