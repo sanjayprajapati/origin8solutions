@@ -3,6 +3,7 @@ const sendToken = require("../utils/jwtToken");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const Appartment = require("../models/Appartment");
 const Cities = require("../models/Cities");
+const Swithes = require("../models/Swithes");
 
 // User Registration
 exports.userRegister = async (req, res, next) => {

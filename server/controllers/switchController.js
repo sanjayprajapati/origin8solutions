@@ -78,3 +78,19 @@ exports.updateSwitchState = catchAsyncErrors(async (req, res, next) => {
     switches,
   });
 });
+exports.updateSwitchName = catchAsyncErrors(async (req, res, next) => {
+  const switchId = req.params.id;
+  const { switchName } = req.body;
+
+  const switches = await Switeches.findByIdAndUpdate(
+    switchId,
+    {
+      $set: { switchName },
+    },
+    { new: true }
+  );
+  res.status(200).json({
+    success: true,
+    switches,
+  });
+});

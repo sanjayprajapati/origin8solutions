@@ -4,6 +4,7 @@ const {
   getAllswitches,
   getAllwitchesOfroom,
   updateSwitchState,
+  updateSwitchName,
 } = require("../controllers/switchController");
 const { isAuthenticatedUser } = require("../middlewares/auth");
 
@@ -19,5 +20,9 @@ router
 router
   .route("/updateswitchstate/:id")
   .put(isAuthenticatedUser, updateSwitchState);
+
+router
+  .route("/updateswitchname/:id")
+  .put(isAuthenticatedUser, updateSwitchName);
 
 module.exports = router;
