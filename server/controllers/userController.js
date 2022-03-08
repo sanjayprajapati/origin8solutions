@@ -72,6 +72,20 @@ exports.userLogout = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+// Get all rooms
+exports.getAllrooms = catchAsyncErrors(async (req, res, next) => {
+  const userId = req.user.id;
+
+  const user = await User.findById(userId);
+  const appartmentId = user.appartmentId.toString();
+  const appartment = await Appartment.findById(appartmentId);
+  const rooms = appartment.rooms;
+  res.status(200).json({
+    success: true,
+    rooms,
+  });
+});
+
 exports.fileuplad = async (req, res, next) => {
   try {
     const file = req.file;
