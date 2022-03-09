@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import WebFont from "webfontloader";
 import Home from "./components/Home/Home";
 import Login from "./components/User/Login";
+import store from "./store";
+import { loadUser } from "./actions/userAction";
 
 function App() {
   useEffect(() => {
@@ -14,7 +16,7 @@ function App() {
       },
     });
 
-    //store.dispatch(loadUser());
+    store.dispatch(loadUser());
   }, []);
   return (
     <Router>

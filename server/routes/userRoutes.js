@@ -8,6 +8,7 @@ const {
   userLogin,
   userLogout,
   getAllrooms,
+  getUser,
 } = require("../controllers/userController");
 const { isAuthenticatedUser } = require("../middlewares/auth");
 const { upload } = require("../middlewares/imageUpload");
@@ -17,6 +18,8 @@ router.route("/register").post(userRegister);
 router.route("/login").post(userLogin);
 
 router.route("/logout").get(userLogout);
+
+router.route("/me").get(isAuthenticatedUser, getUser);
 
 router.route("/allrooms").get(isAuthenticatedUser, getAllrooms);
 

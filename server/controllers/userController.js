@@ -87,6 +87,16 @@ exports.getAllrooms = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+// Get User
+exports.getUser = catchAsyncErrors(async (req, res, next) => {
+  const id = req.user.id;
+  const user = await User.findById(id);
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
 exports.fileuplad = async (req, res, next) => {
   try {
     const file = req.file;
