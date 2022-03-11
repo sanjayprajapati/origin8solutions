@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import "./Header.css";
 import logo from "../../../images/new-logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,7 +10,13 @@ const Header = () => {
         <div className="container">
           <nav>
             <div className="leftnav">
-              <img src={logo} alt="Origin8solutions.com" />
+              <ul>
+                <li>
+                  <Link to="/">
+                    <img src={logo} alt="Origin8solutions.com" />
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div className="rightnav"></div>
           </nav>

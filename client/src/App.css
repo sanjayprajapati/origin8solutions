@@ -5,9 +5,15 @@
 }
 body {
   font-family: Roboto;
+  background-color: #f1f1f1;
 }
 .container {
   width: 100%;
   max-width: 1140px;
   padding: 0 15px;
+  margin: 0 auto;
+}
+.heading {
+  color: #fb8d4e;
+  font-size: 26px;
 }
