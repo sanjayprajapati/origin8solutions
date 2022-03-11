@@ -1,0 +1,83 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: auto;
+}
+.loginbox {
+  width: 320px;
+  height: auto;
+  padding: 20px 20px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+a {
+  color: #fb8d4e;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+input:focus,
+input:focus-visible,
+select:fucus,
+select:focus-visible {
+  border: 1px solid rgb(196, 232, 247) !important;
+  outline: auto rgb(196, 232, 247);
+  color: #666;
+}
+select:not(:-internal-list-box) {
+  overflow: visible !important;
+}
+.form-group {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.form-group svg {
+  transform: translateX(1vmax);
+  position: absolute;
+  color: #999;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 5px 5px 5px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  height: 40px;
+  margin-bottom: 0px;
+  padding-left: 40px;
+  color: #666;
+}
+.form-group.checkbox {
+  font-size: 13px;
+  margin-top: 0;
+}
+.form-group.checkbox input {
+  height: auto;
+  width: auto;
+  padding: 0;
+}
+.formbtn {
+  background-color: #59bd60;
+  width: 100%;
+  padding: 5px 5px;
+  text-align: center;
+  border: transparent;
+  border-radius: 5px;
+  height: 40px;
+  color: #fff;
+}
+.bottomtext {
+  font-size: 12px;
+  margin: 20px 0;
+}
