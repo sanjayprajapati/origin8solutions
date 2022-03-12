@@ -13,3 +13,13 @@ exports.createCity = catchAsyncErrors(async (req, res, next) => {
     city,
   });
 });
+
+// getAllCity
+exports.getAllCity = catchAsyncErrors(async (req, res, next) => {
+  const city = await Cities.find();
+  console.log(city);
+  res.status(200).json({
+    success: true,
+    city,
+  });
+});

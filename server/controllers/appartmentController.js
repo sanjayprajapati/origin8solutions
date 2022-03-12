@@ -19,3 +19,13 @@ exports.createAppartment = async (req, res, next) => {
     res.status(500).json({ succss: false, message: error.message });
   }
 };
+//getAllAppartment
+
+exports.getAllAppartment = catchAsyncErrors(async (req, res, next) => {
+  const appartment = await Appartment.find();
+
+  res.status(200).json({
+    succss: true,
+    appartment,
+  });
+});

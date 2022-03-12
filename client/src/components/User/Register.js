@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import logo from "../../images/new-logo.png";
 import { Link } from "react-router-dom";
@@ -10,6 +10,14 @@ import LocationCityIcon from "@mui/icons-material/LocationCity";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
+  const [cpassword, setCpassword] = useState("");
+  const [city, setCity] = useState("");
+  const [appartment, setAppartment] = useState("");
+
   return (
     <div className="register-container">
       <div className="registerbox">
@@ -20,15 +28,33 @@ const Register = () => {
         <form>
           <div className="form-group">
             <PersonOutlineIcon />
-            <input type="text" required placeholder="Enter your Name" />
+            <input
+              type="text"
+              required
+              placeholder="Enter your Name"
+              value={username}
+              onChange={(e) => setUsername(e.value)}
+            />
           </div>
           <div className="form-group">
             <MailOutlineIcon />
-            <input type="text" required placeholder="Enter your email" />
+            <input
+              type="text"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.value)}
+            />
           </div>
           <div className="form-group">
             <PhoneAndroidIcon />
-            <input type="text" required placeholder="Enter your mobile" />
+            <input
+              type="text"
+              required
+              placeholder="Enter your mobile"
+              value={mobile}
+              onChange={(e) => setMobile(e.value)}
+            />
           </div>
           <div className="form-group">
             <ApartmentIcon />
