@@ -11,8 +11,8 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 
 const Register = () => {
   return (
-    <div className="login-container">
-      <div className="loginbox">
+    <div className="register-container">
+      <div className="registerbox">
         <div className="logo">
           <img src={logo} alt="Origin8solutions" />
         </div>

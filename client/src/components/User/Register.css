@@ -1,18 +1,19 @@
-.login-container {
+.register-container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   height: auto;
 }
-.loginbox {
+.registerbox {
   width: 320px;
   height: auto;
-  padding: 20px 20px 0;
+  padding: 20px 20px;
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
   justify-content: center;
+  box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 10%);
 }
 .mb-10 {
   margin-bottom: 10px !important;
@@ -35,20 +36,20 @@ select:focus-visible {
 select:not(:-internal-list-box) {
   overflow: visible !important;
 }
-.form-group {
+.registerbox .form-group {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
-.form-group svg {
+.registerbox .form-group svg {
   transform: translateX(1vmax);
   position: absolute;
   color: #999;
 }
-.form-group input,
-.form-group select {
+.registerbox .form-group input,
+.registerbox .form-group select {
   width: 100%;
   padding: 5px 5px 5px 15px;
   border: 1px solid #e5e5e5;
@@ -58,16 +59,16 @@ select:not(:-internal-list-box) {
   padding-left: 40px;
   color: #666;
 }
-.form-group.checkbox {
+.registerbox .form-group.checkbox {
   font-size: 13px;
   margin-top: 0;
 }
-.form-group.checkbox input {
+.registerbox .form-group.checkbox input {
   height: auto;
   width: auto;
   padding: 0;
 }
-.formbtn {
+.registerbox .formbtn {
   background-color: #59bd60;
   width: 100%;
   padding: 5px 5px;
