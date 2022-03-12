@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Register.css";
 import logo from "../../images/new-logo.png";
 import { Link } from "react-router-dom";
@@ -8,6 +8,8 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import ApartmentIcon from "@mui/icons-material/Apartment";
+import { useDispatch, useSelector } from "react-redux";
+import { getCity } from "../../actions/cityAction";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -17,6 +19,14 @@ const Register = () => {
   const [cpassword, setCpassword] = useState("");
   const [city, setCity] = useState("");
   const [appartment, setAppartment] = useState("");
+
+  const dispatch = useDispatch();
+  const { loading, cities, error } = useSelector((state) => state.cities);
+
+  useEffect(() => {
+    //  dispatch(getCity());
+  }, []);
+  console.log(cities[0].city_name);
 
   return (
     <div className="register-container">
@@ -66,6 +76,12 @@ const Register = () => {
             <LocationCityIcon />
             <select>
               <option value="0">Select City</option>
+              {cities &&
+                cities.map((item) => (
+                  <option key={item._id} value={item._id}>
+                    {item.city_name}
+                  </option>
+                ))}
             </select>
           </div>
           <div className="form-group ">

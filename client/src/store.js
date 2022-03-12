@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { userReducer } from "./reducers/userReducer";
 import { cityReducer } from "./reducers/cityReducer";
+import { appartmentReducer } from "./reducers/appartmentReducer";
 
 const reducer = combineReducers({
   user: userReducer,
-  city: cityReducer,
+  cities: cityReducer,
+  appartments: appartmentReducer,
 });
 
 const middleware = [thunk];

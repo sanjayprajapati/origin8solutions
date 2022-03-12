@@ -1,29 +1,29 @@
 import {
-  CITY_REQUEST,
-  CITY_SUCCESS,
-  CITY_FAIL,
+  APPARTMENT_REQUEST,
+  APPARTMENT_SUCCESS,
+  APPARTMENT_FAIL,
   CLEAR_ERRORS,
-} from "../constants/cityConstants";
+} from "../constants/appartmentConstants";
 
-export const cityReducer = (state = { cities: {} }, action) => {
+export const appartmentReducer = (state = { appartments: {} }, action) => {
   switch (action.type) {
-    case CITY_REQUEST:
+    case APPARTMENT_REQUEST:
       return {
         loading: true,
       };
 
-    case CITY_SUCCESS:
+    case APPARTMENT_SUCCESS:
       return {
         ...state,
         loading: false,
-        cities: action.payload,
+        appartments: action.payload,
       };
 
-    case CITY_FAIL:
+    case APPARTMENT_FAIL:
       return {
         ...state,
         loading: false,
-        cities: null,
+        appartments: null,
         error: action.payload,
       };
 

@@ -4,6 +4,7 @@ import {
   CITY_FAIL,
   CLEAR_ERRORS,
 } from "../constants/cityConstants";
+import axios from "axios";
 
 // Get City
 export const getCity = () => async (dispatch) => {
@@ -12,8 +13,8 @@ export const getCity = () => async (dispatch) => {
 
     const { data } = await axios.get(`/api/v1/cities`);
 
-    dispatch({ type: LOAD_USER_SUCCESS, payload: data.city });
+    dispatch({ type: CITY_SUCCESS, payload: data.cities });
   } catch (error) {
-    dispatch({ type: LOAD_USER_FAIL, payload: error.response.data.message });
+    dispatch({ type: CITY_FAIL, payload: error.response.data.message });
   }
 };
