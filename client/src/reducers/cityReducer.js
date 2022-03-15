@@ -4,12 +4,18 @@ import {
   CITY_FAIL,
   CLEAR_ERRORS,
 } from "../constants/cityConstants";
+const initialState = {
+  loading: false,
+  cities: [],
+  error: null,
+};
 
-export const cityReducer = (state = { cities: {} }, action) => {
+export const cityReducer = (state = initialState, action) => {
   switch (action.type) {
     case CITY_REQUEST:
       return {
         loading: true,
+        cities: [],
       };
 
     case CITY_SUCCESS:

@@ -1,0 +1,32 @@
+.dashboard {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dashboard-box {
+  max-width: 480px;
+  width: 100%;
+  border: 0px solid #000;
+}
+.header {
+  background-color: #fb8d4e;
+  padding: 10px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 20px;
+}
+.rooms-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.rooms-box div {
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 10%);
+  width: 180px;
+  padding: 20px;
+  color: #000;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}

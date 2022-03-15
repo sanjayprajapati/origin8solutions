@@ -75,9 +75,9 @@ exports.userLogout = catchAsyncErrors(async (req, res, next) => {
 
 // Get all rooms
 exports.getAllrooms = catchAsyncErrors(async (req, res, next) => {
-  const userId = req.user.id;
-
-  const user = await User.findById(userId);
+  const id = req.user.id;
+  console.log(id);
+  const user = await User.findById(id);
   const appartmentId = user.appartmentId.toString();
   const appartment = await Appartment.findById(appartmentId);
   const rooms = appartment.rooms;
@@ -90,6 +90,7 @@ exports.getAllrooms = catchAsyncErrors(async (req, res, next) => {
 // Get User
 exports.getUser = catchAsyncErrors(async (req, res, next) => {
   const id = req.user.id;
+  //console.log(id);
   const user = await User.findById(id);
   res.status(200).json({
     success: true,

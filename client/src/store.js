@@ -7,8 +7,9 @@ import { appartmentReducer } from "./reducers/appartmentReducer";
 
 const reducer = combineReducers({
   user: userReducer,
+  rooms: appartmentReducer,
   cities: cityReducer,
-  appartments: appartmentReducer,
+  appartment: appartmentReducer,
 });
 
 const middleware = [thunk];

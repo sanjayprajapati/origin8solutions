@@ -9,6 +9,7 @@ import Register from "./components/User/Register";
 import store from "./store";
 import { loadUser } from "./actions/userAction";
 import ForgotPassword from "./components/User/ForgotPassword";
+import Dashboard from "./components/User/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>
