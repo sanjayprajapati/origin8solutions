@@ -8,14 +8,17 @@ import img3 from "../../images/bedroom.png";
 import img1 from "../../images/bathroom.png";
 import imgstudyroom from "../../images/studyroom.png";
 import { getSwitchUtilityClass } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
   const { rooms } = useSelector((state) => state.rooms);
 
   const getSwitches = (index) => {
-    console.log(index);
+    //console.log(index);
+    navigate(`/dashbord/${index}`);
   };
 
   useEffect(() => {
