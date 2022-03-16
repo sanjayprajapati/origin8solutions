@@ -8,6 +8,9 @@ import {
   SINGLE_SWITCH_REQUEST,
   SINGLE_SWITCH_SUCCESS,
   SINGLE_SWITCH_FAIL,
+  CREATE_SWITCH_REQUEST,
+  CREATE_SWITCH_SUCCESS,
+  CREATE_SWITCH_FAIL,
   CLEAR_ERRORS,
 } from "../constants/switchesConstants";
 
@@ -20,12 +23,14 @@ const initialState = {
 export const switchesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ALL_SWITCH_ROOM_REQUEST:
+    case CREATE_SWITCH_REQUEST:
       return {
         loading: true,
         switches: [],
       };
 
     case ALL_SWITCH_ROOM_SUCCESS:
+    case CREATE_SWITCH_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -33,6 +38,7 @@ export const switchesReducer = (state = initialState, action) => {
       };
 
     case ALL_SWITCH_ROOM_FAIL:
+    case CREATE_SWITCH_FAIL:
       return {
         ...state,
         loading: false,

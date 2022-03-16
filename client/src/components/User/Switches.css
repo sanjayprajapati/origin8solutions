@@ -1,5 +1,7 @@
 .switches-box {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .swiches {
   background-color: #fff;
@@ -9,6 +11,7 @@
   color: #666;
   padding: 15px;
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 10%);
+  margin-bottom: 20px;
 }
 .btncreate {
   align-self: flex-end;
