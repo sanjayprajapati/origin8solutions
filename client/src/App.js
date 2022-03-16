@@ -10,8 +10,12 @@ import store from "./store";
 import { loadUser } from "./actions/userAction";
 import ForgotPassword from "./components/User/ForgotPassword";
 import Dashboard from "./components/User/Dashboard";
+import Switches from "./components/User/Switches";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  const { loading, isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
     WebFont.load({
       google: {
@@ -30,6 +34,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard/:index" element={<Switches />} />
         </Routes>
       </div>
     </Router>

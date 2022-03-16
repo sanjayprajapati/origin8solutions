@@ -16,7 +16,7 @@ export const getSwitchesByRoom = (index) => async (dispatch) => {
   try {
     dispatch({ type: ALL_SWITCH_ROOM_REQUEST });
 
-    const { data } = await axios.get(`api/vi/allswitches/${index}`);
+    const { data } = await axios.get(`/api/v1/allswitches/${index}`);
 
     dispatch({
       type: ALL_SWITCH_ROOM_SUCCESS,

@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const getSwitches = (index) => {
     //console.log(index);
-    navigate(`/dashbord/${index}`);
+    navigate(`/dashboard/${index}`);
   };
 
   useEffect(() => {
@@ -30,13 +30,13 @@ const Dashboard = () => {
     <div className="container">
       <div className="dashboard">
         <div className="dashboard-box">
-          <div className="header">
+          <div className="header-box">
             <h2>Dashboard</h2>
           </div>
           <div className="rooms-box">
             {rooms &&
               rooms.map((item, index) => (
-                <div key={item[index]} onClick={() => getSwitches(index)}>
+                <div title={item} key={item} onClick={() => getSwitches(index)}>
                   <img src={images[index]} alt={item} />
                   {item}
                 </div>
