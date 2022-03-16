@@ -34,7 +34,11 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
-          <Route exact path="/dashboard/:index" element={<Switches />} />
+          <Route
+            exact
+            path="/dashboard/:index"
+            element={<Switches title="Room" />}
+          />
         </Routes>
       </div>
     </Router>

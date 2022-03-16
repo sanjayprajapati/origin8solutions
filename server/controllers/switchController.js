@@ -41,7 +41,7 @@ exports.getAllwitchesOfroom = catchAsyncErrors(async (req, res, next) => {
   const userId = req.user.id;
 
   const apprtId = req.user.appartmentId.toString();
-  console.log("asdfasdf", apprtId);
+  console.log(apprtId);
 
   const appartment = await Appartment.findById(apprtId);
 
