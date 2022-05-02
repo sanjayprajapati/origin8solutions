@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
   const { loading, isAuthenticated } = useSelector((state) => state.user);
+  //console.log(isAuthenticated);
   useEffect(() => {
     WebFont.load({
       google: {

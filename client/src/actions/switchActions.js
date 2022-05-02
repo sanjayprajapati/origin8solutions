@@ -33,7 +33,7 @@ export const getSwitchesByRoom = (index) => async (dispatch) => {
   }
 };
 
-export const createSwitches = (id) => async (dispatch) => {
+export const createSwitches = (switchName, id) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_SWITCH_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };

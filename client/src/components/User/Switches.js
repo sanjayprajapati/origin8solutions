@@ -20,7 +20,7 @@ const Switches = ({ title }) => {
       <div className="dashboard">
         <div className="dashboard-box">
           <div className="header-box">
-            <h2>{title}</h2>
+            {switches && switches.map((item) => <h2>{item.roomName}</h2>)}
           </div>
           <div className="switches-box">
             {switches &&
