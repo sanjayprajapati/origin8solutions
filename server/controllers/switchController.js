@@ -1,6 +1,9 @@
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const Appartment = require("../models/Appartment");
 const Switeches = require("../models/Swithes");
+const Alarm = require("../models/Alarm");
+const ErrorHandler = require("../utils/errorhandler");
+const schedule = require("node-schedule");
 
 exports.createSwitch = catchAsyncErrors(async (req, res, next) => {
   const userId = req.user.id;
@@ -96,8 +99,20 @@ exports.updateSwitchName = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+//
 exports.setAlarm = catchAsyncErrors(async (req, res, next) => {
   const switchId = req.params.id;
-  console.log("working");
-  res.status(200).json({ success: true });
+
+  const alarmTime = Date.now() + req.body.alarmTime;
+  let setTime = alarmTime.toString();
+  const _alarm = await Alarm.create({
+    switchId,
+    alarmTime: setTime,
+  });
+
+  const job = schedule.scheduleJob(alarmTime, function () {
+    console.log("The world is going to end today.");
+  });
+
+  res.status(200).json({ success: true, alarm: _alarm });
 });
