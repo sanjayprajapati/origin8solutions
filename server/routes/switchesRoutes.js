@@ -5,6 +5,7 @@ const {
   getAllwitchesOfroom,
   updateSwitchState,
   updateSwitchName,
+  setAlarm,
 } = require("../controllers/switchController");
 const { isAuthenticatedUser } = require("../middlewares/auth");
 
@@ -24,5 +25,7 @@ router
 router
   .route("/updateswitchname/:id")
   .put(isAuthenticatedUser, updateSwitchName);
+
+router.route("/alarm/:id").post(isAuthenticatedUser, setAlarm);
 
 module.exports = router;

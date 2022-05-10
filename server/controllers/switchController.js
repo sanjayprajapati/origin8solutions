@@ -95,3 +95,9 @@ exports.updateSwitchName = catchAsyncErrors(async (req, res, next) => {
     switches,
   });
 });
+
+exports.setAlarm = catchAsyncErrors(async (req, res, next) => {
+  const switchId = req.params.id;
+  console.log("working");
+  res.status(200).json({ success: true });
+});

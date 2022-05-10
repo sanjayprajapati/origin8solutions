@@ -17,3 +17,6 @@ body {
   color: #fb8d4e;
   font-size: 26px;
 }
+.lazy-load-image-background.blur {
+  filter: blur(0) !important;
+}

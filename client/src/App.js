@@ -12,6 +12,7 @@ import ForgotPassword from "./components/User/ForgotPassword";
 import Dashboard from "./components/User/Dashboard";
 import Switches from "./components/User/Switches";
 import { useDispatch, useSelector } from "react-redux";
+import AuthScreen from "./routes/AuthScreen";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />
+
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
@@ -41,6 +43,7 @@ function App() {
             element={<Switches title="Room" />}
           />
         </Routes>
+        <LazyloadImages />
       </div>
     </Router>
   );
