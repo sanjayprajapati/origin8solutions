@@ -2,7 +2,7 @@ const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const Appartment = require("../models/Appartment");
 const Switeches = require("../models/Swithes");
 const Alarm = require("../models/Alarm");
-const ErrorHandler = require("../utils/errorhandler");
+const ErrorHandler = require("../utils/errorHandler");
 const schedule = require("node-schedule");
 
 exports.createSwitch = catchAsyncErrors(async (req, res, next) => {
