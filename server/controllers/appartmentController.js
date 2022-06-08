@@ -1,6 +1,6 @@
 const Appartment = require("../models/Appartment");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
-const ErrorHandler = require("../utils/errorhandler");
+const ErrorHandler = require("../utils/errorHandler");
 
 exports.createAppartment = async (req, res, next) => {
   try {
